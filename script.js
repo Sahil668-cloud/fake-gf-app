@@ -14,7 +14,7 @@ const chat = [
     {
         question: "Main bhi theek hu",
         reply: "Achi baat hai Aur batao"
-    }
+    },
     {
         question: "Kya kar rahi ho",
         reply: "Main tumhare baare mein hi soch rahi thi"
@@ -123,5 +123,6 @@ function getreply(message) {
         return "Kya??";
     }
 }
+
 
 
