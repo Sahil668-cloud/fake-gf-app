@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Chat With My GF</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .profileImg {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            /* background-position: center center; */
+            scale: 2;
+            object-position: center bottom;
+        }
+
+        .online {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: lime;
+            border: 2px solid #1F2937;
+            border-radius: 50%;
+            z-index: 100;
+            /* transform: translateX(70px) translateY(70px); */
+            bottom: 10px;
+            /* right: 10px; */
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-2">
+
+    <div class="chatBox flex flex-col justify-end items-center border h-[500px] border-gray-700 rounded-2xl p-4 w-full max-w-md bg-gradient-to-t from-gray-800 to-gray-900 text-gray-200 shadow-lg gap-3"
+        id="chatBox">
+
+
+        <div class="chatLog h-full bg-gray-850 w-full rounded-xl py-4 shadow-inner overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"
+            id="chatLog">
+            <!-- Chat messages appear here -->
+            <!-- Profile Circle -->
+            <!-- Profile Circle with Name -->
+            <div class="relative profileContainer w-full flex flex-col items-center mb-12">
+                <div class="w-28 h-28 rounded-full border-4 border-pink-500 shadow-md overflow-hidden">
+                    <div class="online"></div>
+                    <img src="https://i.pinimg.com/736x/de/8d/43/de8d43d6f70993bb4deae302bb708a80.jpg" alt="Profile"
+                        class="profileImg rounded-full border-4 border-pink-500 shadow-md object-cover relative">
+                </div>
+                <span class="mt-2 text-gray-200 text-lg"><i>Your Girl</i></span>
+            </div>
+        </div>
+
+
+        <div class="inputArea w-full grid grid-cols-3 items-center space-x-2 mt-2">
+            <input type="text" autocomplete="off" id="userInput" placeholder="Enter Message..."
+                class="inputField col-span-2 w-full p-4 border-2 border-gray-600 rounded-xl focus:ring-2 focus:ring-gray-500 focus:outline-none transition-all duration-300 placeholder-gray-400 text-gray-200 bg-gray-800" />
+            <button onclick="submitQuestion()" id="sendButton"
+                class="sendButton w-full p-4 border-none rounded-xl bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold shadow-md transition-all duration-200">Send</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
