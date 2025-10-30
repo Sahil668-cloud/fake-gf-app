@@ -1,5 +1,3 @@
-// 💬 Chat Data
-// 💬 Chat Data
 const chat = [
     { question: "hii", reply: ["Hii baby", "Hii", "Hii love"], delay: 20 },
     { question: "hello", reply: ["Hello baby", "Hii sweetheart"], delay: 20 },
@@ -117,7 +115,7 @@ function submitQuestion() {
                     </div>`
                 );
                 scrollToBottom();
-            }, 300);
+            }, 30000);
         } else {
             setTimeout(() => {
                 const { typingDiv, interval } = showTyping();
@@ -185,3 +183,4 @@ function getReply(message) {
         return { reply: randomDefault, delay: 3000 };
     }
 }
+
